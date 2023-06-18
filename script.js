@@ -291,8 +291,8 @@ const slider = function() {
         activateDot(0);
     }
     init()
-        //same with arrows keys
 
+    //same with arrows keys
     document.addEventListener('keydown', function(event) {
         if (event.key === 'ArrowLeft') {
             prevSlide();
@@ -313,8 +313,12 @@ const slider = function() {
     })
 }
 slider()
+    /////////////
+    //////////////////
+    // document.addEventListener('DOMContentLoaded', function(e) {
+    //     console.log('html has loaded', e);
+    // })
 
-//////////////////
 //////////////////
 ///////////////////
 //header nav rgb(5, 145, 176)
