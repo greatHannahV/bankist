@@ -50,9 +50,9 @@ document.querySelector('.btn--close-cookie').addEventListener('click', function(
 const massageWidth = document.body.getBoundingClientRect().width
 message.style.backgroundColor = '#37383d'
 message.style.width = `${massageWidth}`
-message.style.transform = "skewX(-15deg)";
-// console.log(getComputedStyle(message).height);
-message.style.height = Number.parseFloat(getComputedStyle(message).height, 10) + 30 + 'px'
+    // message.style.transform = "skewX(-15deg)";
+    // console.log(getComputedStyle(message).height);
+message.style.height = Number.parseFloat(getComputedStyle(message).height, 10) + 40 + 'px'
     // document.documentElement.style.setProperty('--color-primary', 'pink')
 
 //smooth scroll
@@ -165,11 +165,33 @@ nav.addEventListener('mouseout', handleHover.bind(1))
 
 // const observer = new IntersectionObserver(obsCallBack, obsOption);
 // observer.observe(section1)
+const mobileNav = document.querySelector('.mobile-nav')
 const navHeigth = nav.getBoundingClientRect().height
+const navHeigthMob = mobileNav.getBoundingClientRect().height
+
+const stickyNavMob = function(entries) {
+    const [entry] = entries
+    if (!entry.isIntersecting) {
+        mobileNav.classList.add('sticky');
+    } else {
+        mobileNav.classList.remove('sticky');
+    }
+}
+const headerObserverMob = new IntersectionObserver(stickyNavMob, {
+    root: null,
+    threshold: 0,
+    rootMargin: `-${navHeigthMob}px`,
+});
+
+headerObserverMob.observe(header)
+
 const stickyNav = function(entries) {
     const [entry] = entries
-    if (!entry.isIntersecting) nav.classList.add('sticky');
-    else nav.classList.remove('sticky');
+    if (!entry.isIntersecting) {
+        nav.classList.add('sticky');
+    } else {
+        nav.classList.remove('sticky');
+    }
 }
 const headerObserver = new IntersectionObserver(stickyNav, {
     root: null,
@@ -232,6 +254,7 @@ const slider = function() {
     const btnLeft = document.querySelector('.slider__btn--left');
     const btnRight = document.querySelector('.slider__btn--right');
     const dotsContainer = document.querySelector('.dots')
+
 
     //FUNCTIONS
     //dots
@@ -313,11 +336,47 @@ const slider = function() {
     })
 }
 slider()
-    /////////////
-    //////////////////
-    // document.addEventListener('DOMContentLoaded', function(e) {
-    //     console.log('html has loaded', e);
-    // })
+
+///navigation
+const btnNavMob = document.querySelector('.btn-mob-nav');
+const iconsMobNac = document.querySelectorAll('.icon-mob-nav');
+const mobNav = document.querySelector('.mobile-nav');
+const navOpenLinks = document.querySelectorAll(".nav__link")
+
+function toggleNavOpen() {
+    iconsMobNac.forEach(el => {
+        if (el.classList.contains("icon-mob-nav") && el.getAttribute("name") === "menu-outline") {
+            el.classList.toggle('nav-open');
+        }
+        if (el.classList.contains("icon-mob-nav") && el.getAttribute("name") === "close-outline") {
+            el.classList.toggle('nav-open');
+        }
+    });
+}
+
+btnNavMob.addEventListener('click', function() {
+    const body = document.querySelector('body');
+    body.classList.toggle('lock');
+    nav.classList.toggle('nav-open');
+    mobNav.classList.toggle('nav-open');
+
+    toggleNavOpen()
+
+
+});
+navOpenLinks.forEach(el => {
+    el.addEventListener('click', function() {
+        mobNav.classList.toggle('nav-open');
+        nav.classList.toggle('nav-open');
+        toggleNavOpen()
+    })
+})
+
+///////////
+////////////////
+// document.addEventListener('DOMContentLoaded', function(e) {
+//     console.log('html has loaded', e);
+// })
 
 //////////////////
 ///////////////////

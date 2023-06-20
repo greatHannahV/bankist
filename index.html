@@ -9,13 +9,14 @@
 
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="media.css" />
     <title>Bankist | When Banking meets Minimalist</title>
     <script defer src="script.js"></script>
 </head>
 
 <body>
     <header class="header">
-        <nav class="nav">
+        <nav class="nav ">
             <img src="img/logo.png" alt="Bankist logo" class="nav__logo" id="logo" />
             <ul class="nav__links">
                 <li class="nav__item">
@@ -33,6 +34,15 @@
           </li>
         </ul>
       </nav>
+      <nav class="mobile-nav">
+      <img src="img/logo.png" alt="Bankist logo" class="mob-nav__logo" id="logo" />
+
+      <button class="btn-mob-nav">
+        <ion-icon class="icon-mob-nav" name="menu-outline"></ion-icon>
+        <ion-icon class="icon-mob-nav" name="close-outline"></ion-icon>
+    </button>
+  </nav>
+
 
       <div class="header__title">
         <h1>
@@ -65,7 +75,7 @@
           src="img/digital-lazy.jpg"
           data-src="img/digital.jpg"
           alt="Computer"
-          class="features__img lazy-img"
+          class="features__img first lazy-img"
         />
         <div class="features__feature">
           <div class="features__icon">
@@ -98,14 +108,14 @@
           src="img/grow-lazy.jpg"
           data-src="img/grow.jpg"
           alt="Plant"
-          class="features__img lazy-img"
+          class="features__img second lazy-img"
         />
 
         <img
           src="img/card-lazy.jpg"
           data-src="img/card.jpg"
           alt="Credit card"
-          class="features__img lazy-img"
+          class="features__img third lazy-img"
         />
         <div class="features__feature">
           <div class="features__icon">
@@ -339,6 +349,8 @@
             </div>
             <div class="overlay hidden"></div>
 
+            <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+            <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
 </body>
 
