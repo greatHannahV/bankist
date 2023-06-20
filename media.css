@@ -462,9 +462,9 @@ transform: translate(-50%, 0%); */
         transform: translateX(-20%);
     }
     .header__img {
-        width: 70%;
+        width: 100%;
         margin: 2rem 0;
-        transform: translateY(-30%) translateX(20%) !important;
+        transform: translateY(0%) translateX(0) !important;
         padding: 1rem;
     }
     .header__title {
@@ -477,13 +477,14 @@ transform: translate(-50%, 0%); */
         padding: 1rem;
     }
     .header__title h1 {
-        font-size: 3rem !important;
+        font-size: 3.5rem !important;
         margin-left: 0.5rem;
     }
     .header__title h4 {
-        font-size: 1.4rem !important;
+        font-size: 1.6rem !important;
         transform: translateY(-35%);
         margin-left: 1rem;
+        margin-top: 2rem;
     }
     html {
         font-size: 56%;
@@ -520,7 +521,7 @@ transform: translate(-50%, 0%); */
         font-size: 3.2rem;
     }
     .slider {
-        height: 64rem;
+        height: 70rem;
         width: 100%;
         padding: 0 1rem;
     }
@@ -530,7 +531,7 @@ transform: translate(-50%, 0%); */
         font-size: 20rem;
     }
     .slide {
-        height: 55rem;
+        height: 65rem;
     }
     .operations__tab {
         margin-right: 1.2rem;
