@@ -496,7 +496,7 @@ transform: translate(-50%, 0%); */
     }
     .operations__tab-container {
         gap: 0;
-        justify-content: space-around;
+        justify-content: space-between;
     }
     .testimonial__text {
         font-size: 1.8rem !important;
