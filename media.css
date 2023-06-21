@@ -581,6 +581,10 @@ transform: translate(-50%, 0%); */
         color: #333;
         margin-right: 2rem;
     }
+    .mobile-nav.nav-open {
+        top: 0;
+        left: 0;
+    }
 }
 
 
