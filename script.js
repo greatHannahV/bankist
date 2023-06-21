@@ -41,6 +41,11 @@ const message = document.createElement('div')
 message.classList.add('cookie-message')
 message.innerHTML = 'We use cookies for improving functionality and analytics. <button class ="btn btn--close-cookie">Got it! </button>'
 header.append(message)
+message.style.position = 'fixed';
+message.style.bottom = '0';
+message.style.left = '0';
+message.style.zIndex = '2222'
+
 
 document.querySelector('.btn--close-cookie').addEventListener('click', function() {
     message.remove()
@@ -49,10 +54,11 @@ document.querySelector('.btn--close-cookie').addEventListener('click', function(
 //Styles
 const massageWidth = document.body.getBoundingClientRect().width
 message.style.backgroundColor = '#37383d'
-message.style.width = `${massageWidth}`
+message.style.width = '100%'
     // message.style.transform = "skewX(-15deg)";
     // console.log(getComputedStyle(message).height);
-message.style.height = Number.parseFloat(getComputedStyle(message).height, 10) + 40 + 'px'
+message.style.height = Number.parseFloat(getComputedStyle(message).height, 10) + 40 + 'px';
+message.style.padding = '5px 10px'
     // document.documentElement.style.setProperty('--color-primary', 'pink')
 
 //smooth scroll
