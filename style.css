@@ -161,12 +161,6 @@
                                     list-style: none;
                                 }
                                 
-                                .mobile-nav .sticky .nav-open {
-                                    top: 0;
-                                    left: 0;
-                                    background-color: var(--color-primary);
-                                }
-                                
                                 .nav__item {
                                     margin-left: 4rem;
                                 }
